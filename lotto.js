@@ -13,10 +13,6 @@ const lotto = shuffle.slice(0, 6).sort((a, b) => {
 });
 const bonus = shuffle[6];
 
-console.log(lotto);
-console.log(bonus);
-
-
 
 const $result = document.querySelector('#result');
 const $bonus = document.querySelector('#bonus');
@@ -35,6 +31,7 @@ const showBall = (number, $target) => {
 
 const callback = () => {
 
+    play();
 
 for (let i = 0; i < lotto.length; i++) {
     setTimeout(() => {
@@ -47,7 +44,7 @@ setTimeout(() => {
     showBall(bonus, $bonus);
 }, 7000);
 
-}
+};
 
 //ball 색칠 함수
 function colorize(number, $tag) {
@@ -66,6 +63,17 @@ function colorize(number, $tag) {
 
 
 const $button = document.querySelector('button');
+
+function play() { 
+    var audio = document.getElementById('audio_play'); 
+    if (audio.paused) { 
+        audio.play(); 
+    }else{ 
+        audio.pause(); 
+        audio.currentTime = 0 
+    } 
+} 
+
 
 
 $button.addEventListener('click', callback);
