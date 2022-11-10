@@ -13,6 +13,10 @@ const lotto = shuffle.slice(0, 6).sort((a, b) => {
 });
 const bonus = shuffle[6];
 
+console.log(lotto);
+console.log(bonus);
+
+
 
 const $result = document.querySelector('#result');
 const $bonus = document.querySelector('#bonus');
